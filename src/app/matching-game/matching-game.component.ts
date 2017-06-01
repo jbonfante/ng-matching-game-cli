@@ -18,7 +18,7 @@ export class MatchingGameComponent implements OnInit {
   private timer: TimerComponent;
 
   private card_count: number = 12;
-  private  cards: Array<number>;
+  public  cards: Array<number>;
   private selectedCards: Array<any>;
   private card_matches: number = 0;
 

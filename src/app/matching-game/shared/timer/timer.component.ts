@@ -15,7 +15,7 @@ export class TimerComponent implements OnInit, OnDestroy {
 
   public tick: number;
   private subscription: Subscription;
-  private enabled: boolean = true;
+  public enabled: boolean = true;
 
   constructor() { }
 
