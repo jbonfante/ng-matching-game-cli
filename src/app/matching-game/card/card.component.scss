@@ -1,0 +1,170 @@
+@import '~compass-mixins/lib/compass/functions';
+@import '~compass-mixins/lib/compass/css3';
+@import '~compass-mixins/lib/compass/layout';
+
+.tp-wrapper {
+  perspective: 800px;
+}
+
+.tp-box {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  margin: 3rem auto;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.tp-box__side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  color: #fff;
+  text-align: center;
+  line-height: 100px;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+}
+.tp-box__front {
+  background: transparent;
+}
+.tp-box__back {
+  background: transparent;
+  transform: rotateY(179.9deg);
+}
+
+
+$blockSize:50px;
+$sizeAdjust:1.2;
+$numBlocks:9;
+$time:1s;
+$timeFunction:ease-in-out;
+$col:4;
+$numRules:(($numBlocks / $col) * 2) - 1;
+$delay:2;
+.container {
+  width:100px;
+  margin:2vh -2vh;
+  transform:rotateX(-20deg) rotateY(-30deg) translate3d(0,0,0);
+  transform-style:preserve-3d;
+}
+.block {
+  width:$blockSize;
+  height:$blockSize;
+  position:relative;
+  float:left;
+  transform-style:preserve-3d;
+}
+.face {
+  width:$blockSize;
+  height:$blockSize;
+  position:absolute;
+  box-sizing:border-box;
+}
+.left {
+  transform-origin:0% 50%;
+  animation: left $time $timeFunction alternate infinite;
+  background:#373C94;
+}
+.right {
+  transform-origin:100% 50%;
+  animation: right $time $timeFunction alternate infinite;
+  background:#373C94;
+}
+.front {
+  animation: front $time $timeFunction alternate infinite;
+  background:#5287A5;
+}
+.back {
+  transform:translateZ(-$blockSize);
+  background:#5287A5;
+}
+.top {
+  transform-origin:50% 0%;
+  animation: top $time $timeFunction alternate infinite;
+  background:#81C8A8;
+}
+.bottom {
+  transform-origin:50% 100%;
+  animation: bottom $time $timeFunction alternate infinite;
+  background:#81C8A8;
+}
+
+//animations
+@keyframes left {
+  0% {width:$blockSize;transform:rotateY(90deg) translateX(0);}
+  100% {width:$blockSize*$sizeAdjust;transform:rotateY(90deg) translateX(-(($blockSize * $sizeAdjust) - $blockSize));}
+}
+@keyframes right {
+  0% {width:$blockSize;transform:rotateY(-90deg) translateZ(0) translateX(0);}
+  100% {width:$blockSize*$sizeAdjust;transform:rotateY(-90deg) translateZ((($blockSize * $sizeAdjust) - $blockSize)) translateX((($blockSize * $sizeAdjust) - $blockSize));}
+}
+@keyframes bottom {
+  0% {height:$blockSize;transform:rotateX(90deg) translateY(0);top:0;}
+  100% {height:$blockSize*$sizeAdjust;transform:rotateX(90deg) translateY((($blockSize * $sizeAdjust) - $blockSize));top:-(($blockSize * $sizeAdjust) - $blockSize);}
+}
+@keyframes top {
+  0% {height:$blockSize;transform:rotateX(-90deg) translateY(0);}
+  100% {height:$blockSize*$sizeAdjust;transform:rotateX(-90deg) translateY(-(($blockSize * $sizeAdjust) - $blockSize));}
+}
+@keyframes front {
+  0% {transform:translateZ(0);}
+  100% {transform:translateZ((($blockSize * $sizeAdjust) - $blockSize));}
+}
+
+
+
+//delay timing
+@for $i from 1 to ($col - 1) {
+  .block:nth-of-type(#{($col - 1)+n+($i - ($col - 1))}) > .face{
+    animation-delay:($time / $numRules) * $i * $delay
+  }
+}
+.block:nth-of-type(#{($col - 1)+n}) > .face {
+  animation-delay:($time / $numRules) * ($col - 1) * $delay;
+}
+@for $n from $col to ($numRules + 1) {
+  .block:nth-of-type(#{($col - 1)+n+"+"+((($col * $n)-($col - 1))-(($col - 1) * $col))}) > .face {
+    animation-delay:($time / $numRules) * $n * $delay
+  }
+}
+.block:nth-of-type(1) {
+  display:none;
+}
+
+h3 {
+  font-family: "Arial Black";
+  color: red;
+  font-size: 4rem;
+  margin: 1rem auto;
+  text-shadow: 1px 1px 0 #000,
+  -1px 1px 0 #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000,
+  0px 1px 0 #000,
+  0px -1px 0 #000,
+  -1px 0px 0 #000,
+  1px 0px 0 #000,
+  2px 2px 0 #000,
+  -2px 2px 0 #000,
+  2px -2px 0 #000,
+  -2px -2px 0 #000,
+  0px 2px 0 #000,
+  0px -2px 0 #000,
+  -2px 0px 0 #000,
+  2px 0px 0 #000,
+  1px 2px 0 #000,
+  -1px 2px 0 #000,
+  1px -2px 0 #000,
+  -1px -2px 0 #000,
+  2px 1px 0 #000,
+  -2px 1px 0 #000,
+  2px -1px 0 #000,
+  -2px -1px 0 #000;
+}
+.success h3
+{
+  color: green;
+}

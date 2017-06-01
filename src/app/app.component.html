@@ -1,3 +1,9 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">
+  <h1>{{title | uppercase}}</h1>
+  <nav>
+    <a routerLink="/dashboard" routerLinkActive="active"><button md-button>Main Menu</button></a>
+    <a routerLink="/highscores" routerLinkActive="active"><button md-button>High Scores</button></a>
+  </nav>
+</md-toolbar>
+
+<router-outlet></router-outlet>

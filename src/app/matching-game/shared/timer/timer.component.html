@@ -1,0 +1,11 @@
+<div *ngIf="enabled; then showTimer else showComplete"></div>
+<ng-template #showTimer >
+  <h3>
+    {{tick | secondsToTime: true }}
+  </h3>
+</ng-template>
+
+<ng-template #showComplete >
+  <h3> YOU WIN!</h3>
+</ng-template>
+

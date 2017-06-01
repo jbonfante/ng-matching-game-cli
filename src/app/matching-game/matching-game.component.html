@@ -1,0 +1,23 @@
+<!--<div class="control-display">-->
+  <!--<button md-raised-button (click)="goBack()">Back</button>-->
+  <!--<button md-raised-button (click)="newGame()">New Game</button>-->
+  <!--<p>-->
+    <!--Matches {{card_matches}} of {{card_count}}-->
+  <!--</p>-->
+<!--</div>-->
+<div class="status-display">
+  <app-timer></app-timer>
+</div>
+
+
+
+<md-grid-list cols="6" rowHeight="1:0.9">
+  <md-grid-tile *ngFor="let card of cards" class="card" >
+    <matching-game-card value="{{card}}" class="matching-game-card" (cardSelected)="cardClicked($event)" >
+
+    </matching-game-card>
+  </md-grid-tile>
+</md-grid-list>
+
+
+

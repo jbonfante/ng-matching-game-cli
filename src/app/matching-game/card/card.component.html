@@ -1,0 +1,19 @@
+<div class="tp-wrapper" [@doneState]="done" [class.success]="isCardMatched()">
+  <div class="tp-box" (click)="toggleFlip()" [@flipState]="flip" (@flipState.done)="animationDone($event)">
+    <div class="tp-box__side tp-box__front">
+      <div class="container">
+        <div *ngFor="let cube of [0,1,2,3,4,5,6]" class="block">
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+      </div>
+    </div>
+    <div class="tp-box__side tp-box__back">
+      <h3>{{value}}</h3>
+    </div>
+  </div>
+</div>

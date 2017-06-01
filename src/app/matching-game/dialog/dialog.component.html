@@ -1,0 +1,13 @@
+<h1 md-dialog-title>CHALLENGE COMPLETE</h1>
+<md-dialog-content>
+  Congratulations!
+  <div>
+    <h5>
+      <md-chip color="primary" selected="true">Total Time: {{data.time | secondsToTime}}</md-chip>
+    </h5>
+  </div>
+  <p></p>
+</md-dialog-content>
+<!--<md-dialog-actions>-->
+  <button (click)="newGame()" md-button color="accent">New Game</button>
+<!--</md-dialog-actions>-->
