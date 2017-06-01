@@ -2,6 +2,10 @@
 
 'Simple' matching game in angular.
 
+For best results use Chrome. 
+
+***Although the interface is fully responsive, there are a few known graphic bugs with 3D Animations on Mobile/Tablet; game is still playable, but the number on back of card/cubes will flicker... or maybe this is just another level of difficulty...***
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
 
 ## Install and Run
