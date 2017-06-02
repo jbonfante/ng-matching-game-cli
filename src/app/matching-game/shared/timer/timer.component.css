@@ -1,5 +1,7 @@
 h3 {
-  font-family: "Arial Black";
+  /*font-family: "Arial Black";*/
+  font-variant: titling-caps;
+  font-weight: bolder;
   color: white;
   text-shadow: 1px 1px 0 #000,
   -1px 1px 0 #000,

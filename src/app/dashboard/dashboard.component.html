@@ -1,17 +1,42 @@
-<md-card>
-  <md-card-title>
-    Welcome to Match Two!
-  </md-card-title>
-  <md-card-subtitle>How to play:</md-card-subtitle>
-  <md-card-content>
-    <md-list>
-      <md-list-item>Choose a card</md-list-item>
-      <md-list-item>Then choose another card to see if they match</md-list-item>
-      <md-list-item>Game ends when you have found all matches.</md-list-item>
-    </md-list>
-  </md-card-content>
-  <md-card-actions>
-    <a routerLink="/play" routerLinkActive="active" md-button color="accent">New Game</a>
-  </md-card-actions>
+<md-grid-list cols="1">
+  <!--<md-grid-tile></md-grid-tile>-->
+  <md-grid-tile>
+    <md-card>
+      <md-card-title color="primary">
+        Welcome to Match Two!
+      </md-card-title>
+      <md-card-content>
+        <md-list>
+          <md-list-item>
+            <md-icon md-list-icon>info</md-icon>
+            <h3 md-line mat-underline>Here's how to play:</h3>
+          </md-list-item>
+          <md-list-item>
+            <md-icon md-list-icon>forward</md-icon>
+            <h4 md-line>Choose a card</h4>
+          </md-list-item>
+          <md-list-item>
+            <md-icon md-list-icon>repeat</md-icon>
+            <h4 md-line>Then choose another card to see if they match</h4>
+          </md-list-item>
+          <md-list-item>
+            <md-icon md-list-icon>done_all</md-icon>
+            <h4 md-line>Game ends when you have found all matches.</h4>
+          </md-list-item>
 
-</md-card>
+          <md-list-item color="accent">
+            <button md-raised-button routerLink="/play" routerLinkActive="active" md-line  color="accent">
+              <md-icon md-list-icon>play_arrow</md-icon>
+              New Game
+            </button>
+          </md-list-item>
+        </md-list>
+      </md-card-content>
+      <md-card-actions>
+      </md-card-actions>
+    </md-card>
+  </md-grid-tile>
+  <!--<md-grid-tile>-->
+
+  <!--</md-grid-tile>-->
+</md-grid-list>

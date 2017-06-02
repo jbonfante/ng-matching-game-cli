@@ -38,9 +38,13 @@
   right: 0;
   height: 100px;
   width: 120px;
-  /*border-radius: 50%;*/
+  border-radius: 50%;
+  border: 5px solid #f5f2f5;
   vertical-align: middle;
-  clip-path: circle(50% at 50% 50%);
+  -webkit-box-shadow: -7px 6px 26px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: -7px 6px 26px -9px rgba(0,0,0,0.75);
+  box-shadow: -7px 6px 26px -9px rgba(0,0,0,0.75);
+  /*clip-path: circle(50% at 50% 50%);*/
   background: #22484d; /* Old browsers */
   background: -moz-radial-gradient(center, ellipse cover,  #45484d 0%, #22484d 100%); /* FF3.6+ */
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#45484d), color-stop(100%,#22484d)); /* Chrome,Safari4+ */

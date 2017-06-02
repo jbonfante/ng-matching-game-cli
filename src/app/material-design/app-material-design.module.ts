@@ -1,11 +1,11 @@
 import {
   MdButtonModule, MdButtonToggleModule, MdCardModule, MdCheckboxModule, MdChipsModule, MdDialogModule,
-  MdGridListModule, MdListModule, MdSnackBarModule, MdToolbarModule
+  MdGridListModule, MdIconModule, MdListModule, MdSnackBarModule, MdTabsModule, MdToolbarModule
 } from '@angular/material';
 import {NgModule} from '@angular/core';
 
 @NgModule({
-  imports: [MdButtonModule, MdCheckboxModule, MdCardModule, MdGridListModule, MdButtonToggleModule, MdSnackBarModule, MdToolbarModule, MdDialogModule, MdChipsModule, MdListModule],
-  exports: [MdButtonModule, MdCheckboxModule, MdCardModule, MdGridListModule, MdButtonToggleModule, MdSnackBarModule, MdToolbarModule, MdDialogModule, MdChipsModule, MdListModule],
+  imports: [MdButtonModule, MdCheckboxModule, MdCardModule, MdGridListModule, MdButtonToggleModule, MdSnackBarModule, MdToolbarModule, MdDialogModule, MdChipsModule, MdListModule, MdTabsModule],
+  exports: [MdButtonModule, MdCheckboxModule, MdCardModule, MdGridListModule, MdButtonToggleModule, MdSnackBarModule, MdToolbarModule, MdDialogModule, MdChipsModule, MdListModule, MdTabsModule, MdIconModule],
 })
 export class AppMaterialDesignModule { }

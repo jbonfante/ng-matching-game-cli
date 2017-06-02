@@ -11,7 +11,7 @@
 
 
 
-<md-grid-list cols="6" rowHeight="1:0.9">
+<md-grid-list cols="6" rowHeight="13em">
   <md-grid-tile *ngFor="let card of cards" class="card" >
     <matching-game-card value="{{card}}" class="matching-game-card" (cardSelected)="cardClicked($event)" >
 

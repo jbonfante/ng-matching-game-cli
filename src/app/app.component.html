@@ -1,10 +1,14 @@
-<md-toolbar color="primary">
-  <h1>{{title | uppercase}}</h1>
-  <nav>
-    <a routerLink="/dashboard" routerLinkActive="active"><button md-button>Main Menu</button></a>
-    <a routerLink="/highscores" routerLinkActive="active"><button md-button>High Scores</button></a>
-    <a href="https://github.com/jbonfante/ng-matching-game-cli"><button md-button color="accent">Github</button></a>
-  </nav>
-</md-toolbar>
+<header>
+    <nav md-tab-nav-bar color="primary">
+      <a md-tab-link md-raised-button routerLink="/dashboard" routerLinkActive="active" color="accent">{{title | uppercase}}</a>
+      <a md-tab-link routerLink="/play" routerLinkActive="active">Play</a>
+      <a md-tab-link routerLink="/highscores" routerLinkActive="active">High Scores</a>
+      <a md-tab-link href="https://github.com/jbonfante/ng-matching-game-cli" target="_blank">Github</a>
+    </nav>
+</header>
 
+<main>
 <router-outlet></router-outlet>
+</main>
+
+<footer></footer>
