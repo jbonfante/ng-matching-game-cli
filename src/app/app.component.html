@@ -1,6 +1,10 @@
 <header>
     <nav md-tab-nav-bar color="primary">
-      <a md-tab-link md-raised-button routerLink="/dashboard" routerLinkActive="active" color="accent">{{title | uppercase}}</a>
+      <button md-tab-link md-raised-button color="accent" routerLink="/dashboard" routerLinkActive="active">
+        <md-icon>home</md-icon>
+        <span md-tab-label-wrapper>{{title | uppercase}}</span>
+      </button>
+
       <a md-tab-link routerLink="/play" routerLinkActive="active">Play</a>
       <a md-tab-link routerLink="/highscores" routerLinkActive="active">High Scores</a>
       <a md-tab-link href="https://github.com/jbonfante/ng-matching-game-cli" target="_blank">Github</a>
