@@ -33,7 +33,9 @@
 .tp-box__back {
   background: transparent;
   transform: rotateY(179.9deg);
+  transform-style: preserve-3d;
 }
+$col:4;
 
 
 $blockSize:50px;
@@ -41,7 +43,6 @@ $sizeAdjust:1.2;
 $numBlocks:9;
 $time:1s;
 $timeFunction:ease-in-out;
-$col:4;
 $numRules:(($numBlocks / $col) * 2) - 1;
 $delay:2;
 .container {
@@ -164,8 +165,10 @@ h3 {
   -2px 1px 0 #000,
   2px -1px 0 #000,
   -2px -1px 0 #000;
+  transform-style: preserve-3d;
 }
 .success h3
 {
   color: green;
+  transform-style: preserve-3d;
 }
